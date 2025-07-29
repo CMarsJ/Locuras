@@ -1,0 +1,39 @@
+#Importing necessary modules
+from Numeros import Numeross
+from os import system
+
+#Funcion GenerarTicket
+@Numeross.decorador
+def Ticket(Tipo, Numero):
+    print(f"{Tipo}-{Numero}")
+
+#Funcion Principal
+def Main():
+    C = Numeross.generarNumeros()
+    P = Numeross.generarNumeros()
+    F = Numeross.generarNumeros()
+    #Menu Principal
+    while True:
+        print("Bienvenido al sistema de turnos")
+        print("Por favor, elija el tipo de turno:")
+        print("1. Perfumeria")
+        print("2. Farmacia")
+        print("3. Cosmetica")
+        print("4. Salir")
+        opcion = input("Ingrese su opción (1-4): ")
+        if opcion == '1':
+            Ticket("C", next(C))
+        elif opcion == '2':
+            Ticket("F", next(F))
+        elif opcion == '3':
+            Ticket("P", next(P))
+        elif opcion == '4':
+            print("Gracias por usar el sistema de turnos. ¡Hasta luego!")
+            break
+        else:
+            system("cls")
+            print("Opción no válida. Intente nuevamente.")
+            print("-----------------------------")
+        
+if __name__ == "__main__":
+    Main()  # Llamar al menu principal
